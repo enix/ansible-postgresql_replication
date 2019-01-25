@@ -1,0 +1,4 @@
+---
+
+# postgres role from enix (https://galaxy.ansible.com/enix/postgresql)
+- src: enix.postgresql
