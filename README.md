@@ -37,6 +37,9 @@ all:
             db-02:
               ansible_host: 185.145.251.243
 ```
+- `postgresql_replication__user` - the username to use for authentification of replication nodes, default : `replicate`.
+- `postgresql_replication__password` - the postgresql_replication__user password. *It is important to change default on production clusters*. default: `replicate`
+
 
 Dependencies
 ------------

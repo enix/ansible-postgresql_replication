@@ -1,2 +1,7 @@
 ---
 # vars file for postgresql_replication
+
+postgresql__user: postgres
+
+# define other postgresql_replication__other_nodes
+postgresql_replication__other_nodes: "{{ groups[postgresql_replication__group] | difference([inventory_hostname]) }}"
