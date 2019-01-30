@@ -37,9 +37,13 @@ all:
             db-02:
               ansible_host: 185.145.251.243
 ```
-- `postgresql_replication__user` - the username to use for authentification of replication nodes, default : `replicate`.
-- `postgresql_replication__password` - the postgresql_replication__user password. *It is important to change default on production clusters*. default: `replicate`
+- `postgresql_replication__user` - the username to use for authentification of replication nodes. default : `replicate`.
+- `postgresql_replication__password` - the postgresql_replication__user password. *It is important to change default on production clusters*. default: `replicate`.
+- `postgresql_replication__waldir` - Directory used to store WAL file sent from the master node to the replication nodes.
 
+Sending servers configuration. See (https://www.postgresql.org/docs/11/runtime-config-replication.html#RUNTIME-CONFIG-REPLICATION-SENDER) for details of correct values for your setup.
+- `postgresql_replication__walsenders` - Number of wal sender processes to enable. default : `3`.
+- `postgresql_replication__walsegments` - Number of wal segments to keep (16MB each). default: `64`.
 
 Dependencies
 ------------

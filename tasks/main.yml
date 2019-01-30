@@ -8,3 +8,8 @@
   when: ansible_os_family == 'Debian'
 
 - include_tasks: config-user.yml
+
+- include_tasks: config-postgresql.yml
+
+- include_tasks: config-replicas.yml
+  when: "postgresql_replication__group_replicas in group_names"
