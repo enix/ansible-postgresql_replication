@@ -11,5 +11,13 @@
 
 - include_tasks: config-postgresql.yml
 
+- meta: flush_handlers
+
+- include_tasks: bootstrap-replicas.yml
+  when:
+    - "postgresql_replication__group_replicas in group_names"
+    - postgresql_replication__bootstrap is defined
+    - postgresql_replication__bootstrap == "yesiwant"
+
 - include_tasks: config-replicas.yml
   when: "postgresql_replication__group_replicas in group_names"

@@ -11,3 +11,6 @@ postgresql_replication__password: "replicate"
 postgresql_replication__waldir: "/var/lib/postgresql/wal-slave/"
 postgresql_replication__walsenders: 3
 postgresql_replication__walsegments: 64
+
+# !!! set this to 'yesiwant' to bootstrap cluster
+# postgresql_replication__bootstrap undefined
