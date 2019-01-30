@@ -8,3 +8,4 @@
     group: "{{ postgresql__user }}"
     mode: 0644
     backup: true
+  notify: restart postgresql
