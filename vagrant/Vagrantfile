@@ -6,13 +6,6 @@ Vagrant.configure(2) do |config|
   config.vm.define "db01" do |db01| end
   config.vm.define "db02" do |db02| end
 
-# virtualbox provider only need a base virtualbox installation on
-# the local system. This is the default if no provider requested
-  config.vm.provider "virtualbox" do |v|
-      v.memory = 512
-      v.cpus = 1
-  end
-
 # openstack provider for Vagrant
 # need vagrant-openstack-provider, See README.vagrant.md for details
 # vagrant up --provider openstack
