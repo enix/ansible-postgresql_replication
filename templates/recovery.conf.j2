@@ -1,6 +1,6 @@
 {{ ansible_managed | comment }}
 
 standby_mode          = 'on'
-primary_conninfo      = 'host={{ hostvars[groups[postgresql_replication__group_master][0]].ansible_default_ipv4.address }} port=5432 user={{ postgresql_replication__user }} password={{ postgresql_replication__password }}'
+primary_conninfo      = 'host={{ postgresql_replication__master_node_address }} port=5432 user={{ postgresql_replication__user }} password={{ postgresql_replication__password }}'
 trigger_file = '/tmp/MasterNow'
 restore_command = 'cp {{ postgresql_replication__waldir }}/%f "%p"'
