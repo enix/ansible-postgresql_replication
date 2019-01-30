@@ -61,10 +61,23 @@ Use Ansible galaxy requirements.yml
 
 And add it to your play's roles:
 
-    - hosts: all
+    - hosts: postgresql
       roles:
         - role enix.postgresql_replication:
-            postgresql_replication__var: true
+            postgresql__version: 11
+            postgresql__global_config_options:
+              - option: listen_addresses
+                value: '*'
+              - option: log_min_duration_statement
+                value: 1000
+            postgresql__hba_entries:
+              - {type: local, database: all, user: postgres, auth_method: peer}
+              - {type: local, database: all, user: all, auth_method: peer}
+              - {type: host, database: all, user: all, address: "0.0.0.0/0", auth_method: md5}
+              - {type: hostssl, database: replication, user: "{{ postgresql_replication__user }}", address: "0.0.0.0/0" ,auth_method: md5}
+            postgresql__users:
+              - {name: "{{ postgresql_replication__user }}", password: "{{ postgresql_replication__password }}", role_attr_flags: "REPLICATION"}
+
 
 You can also use the role as a playbook. You will be asked which hosts to provision, and you can further configure the play by using `--extra-vars`.
 
@@ -79,7 +92,7 @@ Still to do
 Changelog
 ---------
 
-### 0.1
+### 1.0.0
 
 Initial version.
 
