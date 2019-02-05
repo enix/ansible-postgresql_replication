@@ -87,7 +87,8 @@ You can also use the role as a playbook. You will be asked which hosts to provis
 Still to do
 -----------
 
-- Write the role itself, for one
+- Add real gitlab / travis CI
+- Add tests using molecule
 
 
 Changelog
