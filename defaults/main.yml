@@ -14,3 +14,5 @@ postgresql_replication__walsegments: 64
 
 # !!! set this to 'yesiwant' to bootstrap cluster
 # postgresql_replication__bootstrap undefined
+
+postgresql_replication__trigger_file: "/tmp/MasterNow"

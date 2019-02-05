@@ -44,6 +44,7 @@ all:
 Sending servers configuration. See (https://www.postgresql.org/docs/11/runtime-config-replication.html#RUNTIME-CONFIG-REPLICATION-SENDER) for details of correct values for your setup.
 - `postgresql_replication__walsenders` - Number of wal sender processes to enable. default : `3`.
 - `postgresql_replication__walsegments` - Number of wal segments to keep (16MB each). default: `64`.
+- `postgresql_replication__trigger_file` - File used to trigger master operation on a slave node. default: `/tmp/MasterNow`
 
 - `postgresql_replication__bootstrap` - *Very important*. when this variable is set to `"yesiwant"` the deployement will remove all datas on hosts defined in `postgresql_replication__group_replicas` and proceed with a fresh `pg_basebackup` from the master. *Take care as if you enable this and do not properly setup hosts in groups you can completely destroy you datas*.
 
