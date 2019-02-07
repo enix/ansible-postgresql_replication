@@ -26,7 +26,7 @@
         - {type: local, database: all, user: postgres, auth_method: peer}
         - {type: local, database: all, user: all, auth_method: peer}
         - {type: host, database: all, user: all, address: "0.0.0.0/0", auth_method: md5}
-        - {type: hostssl, database: replication, user: "{{ postgresql_replication__user }}", address: "0.0.0.0/0" ,auth_method: md5}
+        - {type: hostssl, database: replication, user: "{{ postgresql_replication__user }}", address: "0.0.0.0/0", auth_method: md5}
       postgresql__users:
         - {name: "{{ postgresql_replication__user }}", password: "{{ postgresql_replication__password }}", role_attr_flags: "REPLICATION"}
       postgresql_replication__walsegments: 8
