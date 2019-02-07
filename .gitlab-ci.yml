@@ -9,6 +9,8 @@ variables:
 # Uncomment if your role have depends
     - ansible-galaxy install -v -r requirements.yml
     - ansible-playbook tests/test.yml --syntax-check
+    - ansible-lint .
+    - yamllint .
     # - ansible-playbook -vvv --connection=local tests/test.yml
     # - idempotence=$(mktemp)
     # - ansible-playbook -vvv --connection=local tests/test.yml | tee ${idempotence}
