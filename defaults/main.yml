@@ -2,8 +2,8 @@
 # defaults file for postgresql_replication
 
 postgresql_replication__group: "postgresql"
-postgresql_replication__group_master: "postgresql-master"
-postgresql_replication__group_replicas: "postgresql-replicas"
+postgresql_replication__group_master: "postgresql_master"
+postgresql_replication__group_replicas: "postgresql_replicas"
 
 postgresql_replication__user: "replicate"
 postgresql_replication__password: "replicate"
