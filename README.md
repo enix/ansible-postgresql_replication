@@ -20,19 +20,19 @@ This roles comes preloaded with almost every available default. You can override
 
 This role work in a different way than several others in a way that in order to make different cluster hosts roles independent we use ansible groups. There is so 3 different groups to define in your inventory. to make this usable with different clusters in the same inventory they are configurable.
 - `postgresql_replication__group` - the main group of hosts for this cluster, default: `postgresql`
-- `postgresql_replication__group_master` - the master group that must include only *one host*, default: `postgresql-master`
-- `postgresql_replication__group_replicas` - the group including the replicas hosts, default: `postgresql-replicas`
+- `postgresql_replication__group_master` - the master group that must include only *one host*, default: `postgresql_master`
+- `postgresql_replication__group_replicas` - the group including the replicas hosts, default: `postgresql_replicas`
 Your inventory must have in final this form (yaml format exemple):
 ```
 all:
   children:
     postgresql:
       children:
-        postgresql-master:
+        postgresql_master:
           hosts:
             db-01:
               ansible_host: 185.145.251.12
-        postgresql-replicas:
+        postgresql_replicas:
           hosts:
             db-02:
               ansible_host: 185.145.251.243
