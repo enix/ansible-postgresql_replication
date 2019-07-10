@@ -94,6 +94,11 @@ Still to do
 Changelog
 ---------
 
+### 1.1.0
+
+Update group names to postgresql_master and postgresql_replicas.
+Comply with ansible 2.8+ group names requirements
+
 ### 1.0.0
 
 Initial version.
